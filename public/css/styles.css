@@ -43,7 +43,7 @@ body {
     background-color: rgba(46, 46, 46, 0.9);
 }
 .third-card {
-    background-color: rgba(219, 216, 34, 0.925);
+    background-color: rgba(7, 58, 59, 0.925);
 }
 .card-text {
     color: black;
@@ -88,4 +88,10 @@ body {
 .online-bar {
     border-radius: 0%;
     width: 100%;
+}
+.vip-green {
+    background-color: green;
+}
+.vip-red {
+    background-color: red;
 }
