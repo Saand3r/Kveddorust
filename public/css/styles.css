@@ -1,0 +1,91 @@
+body {
+    background-image: url("../img/700580_20210407191413_1.png");
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: sans-serif;
+}
+.wrapper {
+    margin: 0 auto;
+}
+.carousel-sizing {
+    height: 500px;
+
+}
+.vh {
+    height: 100vh;
+}
+.center {
+    justify-content: center;
+    text-align: center;
+}
+.list-item {
+    width: 33%;
+}
+.first-card {
+    background-color: rgba(29, 29, 29, 0.5);
+    color: white;
+}
+.first-card-title {
+    font-family: 'Rubik', sans-serif;
+    font-size: 42px;
+    color: white;
+}
+.first-card-subtitle {
+    color: rgb(255, 255, 255);
+}
+.first-card-image {
+    width: 100%;
+    border-radius: 2%;
+}
+.second-card {
+    background-color: rgba(46, 46, 46, 0.9);
+}
+.third-card {
+    background-color: rgba(219, 216, 34, 0.925);
+}
+.card-text {
+    color: black;
+}
+.connect-button {
+    background-color: rgb(61, 75, 39);
+    color: rgb(166, 205, 99);
+    border-radius: 0%;
+    border: black 1px solid;
+}
+.connect-button:hover {
+    background-color: rgb(77, 95, 48);
+    color: rgb(166, 205, 99);
+}
+.shop-button {
+    background-color: rgb(29,66,95);
+    color: rgb(72,153,211);
+    border-radius: 0%;
+    border: black 1px solid;
+}
+.shop-button:hover {
+    background-color: rgb(39, 92, 133);
+    color: rgb(72,153,211);
+}
+.server-tags {
+    background-color: rgb(38,67,94);
+    color: #dddddd;
+    padding: 5px 8px;
+    font-size: 15px;
+    margin: 2px;
+}
+.online-players {
+    font-size: 20px;
+    color: black;
+}
+.custom-nav {
+    background-color: rgba(38,67,94, .95)
+}
+.brand-image {
+    height: 40px;
+}
+.online-bar {
+    border-radius: 0%;
+    width: 100%;
+}
