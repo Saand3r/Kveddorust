@@ -11,6 +11,7 @@ var express = require('express')
 const ejsLint = require('ejs-lint');
 const expressLayouts = require('express-ejs-layouts')
 require('dotenv').config()
+//require('./src/rcon.js');
 
 
 var SteamStrategy = passportSteam.Strategy;
@@ -81,13 +82,7 @@ app.get('/logout', function(req, res, next) {
       res.redirect('/');
     });
 });
-app.get('/api/steamuser', (req, res) => {
-    //console.log(res.req.socket)
-    //const steamName = res.headers.user.displayName
-    //const steamId = res.user.id
-    //res.json(steamName)
-    //console.log(res)
-});
+
 
 app.use('/onlineplayers', (req, res) => {
     const Gamedig = require('gamedig')
@@ -108,6 +103,18 @@ app.use('/onlineplayers', (req, res) => {
         console.log(error)
     })
 })
+const Rcon = require('rcon-srcds').default;
+const server = new Rcon({ host: '91.189.176.196', port: 28216 });
+server.authenticate(process.env.RCON_PASSWORD)
+    .then(() => {
+        console.log('authenticated')
+        return server.execute('status');
+    })
+    .then(console.log)
+    .catch(console.error)
+
+
+
 
 app.use('/store', (req, res) => {
     res.status(200)
@@ -119,6 +126,10 @@ app.use('/commands', (req, res) => {
     res.render('commands', { title: 'Kveddo Commands', user: req.user })
 })
 
+app.use('/contact', (req, res) => {
+    res.status(200)
+    res.render('contact', { title: 'Kveddo Contact', user: req.user })
+})
 
 // See views/auth.js for authentication routes
 app.use('/auth', authRoutes);
