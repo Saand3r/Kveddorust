@@ -9,8 +9,12 @@ var express = require('express')
 
 
 const ejsLint = require('ejs-lint');
-const expressLayouts = require('express-ejs-layouts')
+const expressLayouts = require('express-ejs-layouts');
+const rcon = require('./modules/rcon.js');
+//const { default: RCON } = require('rcon-srcds');
+//const Rcon = require('rcon');
 require('dotenv').config()
+require('./modules/rcon.js')
 //require('./src/rcon.js');
 
 
@@ -103,18 +107,6 @@ app.use('/onlineplayers', (req, res) => {
         console.log(error)
     })
 })
-const Rcon = require('rcon-srcds').default;
-const server = new Rcon({ host: '91.189.176.196', port: 28216 });
-server.authenticate(process.env.RCON_PASSWORD)
-    .then(() => {
-        console.log('authenticated')
-        return server.execute('status');
-    })
-    .then(console.log)
-    .catch(console.error)
-
-
-
 
 app.use('/store', (req, res) => {
     res.status(200)
