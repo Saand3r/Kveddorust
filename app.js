@@ -1,4 +1,13 @@
 
+server({
+    log: {
+      level: 'info',
+      report: (content, type) => {
+        console.log(content);
+      }
+    }
+  });
+
 var express = require('express')
   , passport = require('passport')
   , bodyParser = require('body-parser')
