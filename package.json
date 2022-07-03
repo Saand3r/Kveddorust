@@ -2,7 +2,8 @@
   "name": "asdasdasd",
   "version": "1.0.0",
   "engines": {
-    "node": "14.17.5"},
+    "node": "14.17.5"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "compression": "^1.7.4",
     "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
     "ejs-lint": "^1.2.2",
@@ -19,6 +21,7 @@
     "express-ejs-layouts": "^2.5.1",
     "express-session": "^1.17.3",
     "gamedig": "^4.0.4",
+    "helmet": "^5.1.0",
     "passport": "^0.6.0",
     "passport-steam": "^1.0.17",
     "rustrcon": "^1.0.2"
