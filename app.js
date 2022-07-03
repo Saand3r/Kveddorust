@@ -1,13 +1,4 @@
 
-server({
-    log: {
-      level: 'info',
-      report: (content, type) => {
-        console.log(content);
-      }
-    }
-  });
-
 var express = require('express')
   , passport = require('passport')
   , bodyParser = require('body-parser')
@@ -145,3 +136,20 @@ function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) { return next(); }
     res.redirect('/');
 }
+
+var debug = require('debug')('author');
+
+// Display Author update form on GET
+exports.author_update_get = function(req, res, next) {
+
+    req.sanitize('id').escape().trim();
+    Author.findById(req.params.id, function(err, author) {
+        if (err) {
+            debug('update error:' + err);
+            return next(err);
+        }
+        //On success
+        res.render('author_form', { title: 'Update Author', author: author });
+    });
+
+};
