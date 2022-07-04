@@ -11,7 +11,7 @@ rcon.on('connected', (user, req, res) => {
 
 	// Message, Name, Identifier.
 	rcon.send('status', 'Artful', 11);
-    //rcon.send("players")
+    rcon.send("players")
 
 	setTimeout(() => {
 		rcon.destroy();
