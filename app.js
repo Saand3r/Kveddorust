@@ -53,7 +53,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 
-var PORT = 3000;
+var PORT = 5000;
 
 app.use(session({
     secret: process.env.SESSION_SECRET,
@@ -135,4 +135,20 @@ app.listen(process.env.PORT || PORT, async function(err){
 function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) { return next(); }
     res.redirect('/');
+}
+if (typeof(PhusionPassenger) !== 'undefined') {
+    PhusionPassenger.configure({ autoInstall: false });
+}
+
+app.get('/', function(req, res) {
+    var body = 'Hello World';
+    res.setHeader('Content-Type', 'text/plain');
+    res.setHeader('Content-Length', body.length);
+    res.end(body);
+});
+
+if (typeof(PhusionPassenger) !== 'undefined') {
+    app.listen('passenger');
+} else {
+    app.listen(3000);
 }
