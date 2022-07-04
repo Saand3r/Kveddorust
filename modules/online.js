@@ -15,4 +15,4 @@ async function onlinePlay() {
 }).catch((error) => {
     console.log("Sumthing went wrong" + error);
 })};
-module.exports = onlinePlay();
+/* module.exports = onlinePlay(); */
