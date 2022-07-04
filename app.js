@@ -126,7 +126,7 @@ app.use('/contact', (req, res) => {
 // See views/auth.js for authentication routes
 app.use('/auth', authRoutes);
 
-app.listen(PORT, async function(err){
+app.listen(process.env.PORT || PORT, async function(err){
     if (err) console.log(err);
     console.log("Server listening on PORT", PORT);
 });
