@@ -33,8 +33,8 @@ passport.deserializeUser(function(obj, done) {
 
 // Initiate Strategy
 passport.use(new SteamStrategy({
-    returnURL: 'http://localhost:3000/auth/steam/return',
-    realm: 'http://localhost:3000/',
+    returnURL: 'http://kveddo.com/auth/steam/return',
+    realm: 'http://kveddo.com/',
     apiKey: process.env.STEAM_API
     }, function (identifier, profile, done) {
      process.nextTick(function () {
