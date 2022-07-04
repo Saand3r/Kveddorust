@@ -44,42 +44,135 @@ Skins
 /skin — Move item to container and choose skin -->
 
 <div class="card second-card">
-    <div class="container">
-        <div class="row">
-            <h2>Available Commands</h2>
-        </div>
-        <div class="row mt-2">
-            <div class="col-4">
-              <div class="list-group" id="list-tab" role="tablist">
-                <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">Teleportation</a>
-                <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile">Home</a>
-                <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">Vehicles</a>
-                <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">Bgrade</a>
-              </div>
-            </div>
-            <div class="col-8">
-              <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list"><h2>Teleportation Commands</h2>
-                <span>/tpr < player > -- Sends tp request <br>
-                /tpa -- Accept incoming tp request <br>
-                /tpc -- Cancel incoming tp request</span>
-                </div>
-                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
-                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
-                    <span>/vclaim -- Claims vehicle <br>
-                    /vunclaim -- Unclaims vehicle <br>
-                    /vlock -- Add codelock to vehicle</span>
-                </div>
-                <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
-                    <span>/bgrade t < seconds > -- Change the players disable timer <br>
-                        /bgrade 0 -- Disable BGrade <br>
-                        /bgrade 1 -- Enable automatic Wood upgrades <br>
-                        /bgrade 2 -- Enable automatic Stone upgrades <br>
-                        /bgrade 3 -- Enable automatic Metal upgrades <br>
-                        /bgrade 4 -- Enable automatic Armoured upgrades</span>
-                </div>
-              </div>
-            </div>
-          </div>
+  <div class="container">
+    <div class="row">
+      <h2>Plugin's list overview</h2>
     </div>
+    <div class="row mt-2 mb-2">
+      <div class="col-4">
+        <div class="list-group" id="list-tab" role="tablist">
+          <a
+            class="list-group-item list-group-item-action active"
+            id="list-tp-list"
+            data-bs-toggle="list"
+            href="#list-tp"
+            role="tab"
+            aria-controls="list-tp"
+            >Teleportation</a
+          >
+          <a
+            class="list-group-item list-group-item-action"
+            id="list-home-list"
+            data-bs-toggle="list"
+            href="#list-home"
+            role="tab"
+            aria-controls="list-home"
+            >Home</a
+          >
+          <a
+            class="list-group-item list-group-item-action"
+            id="list-vehicles-list"
+            data-bs-toggle="list"
+            href="#list-vehicle"
+            role="tab"
+            aria-controls="list-vehicle"
+            >Vehicles</a
+          >
+          <a
+            class="list-group-item list-group-item-action"
+            id="list-bgrade-list"
+            data-bs-toggle="list"
+            href="#list-bgrade"
+            role="tab"
+            aria-controls="list-bgrade"
+            >Bgrade & Remove</a
+          >
+          <a
+            class="list-group-item list-group-item-action"
+            id="list-skin-list"
+            data-bs-toggle="list"
+            href="#list-skin"
+            role="tab"
+            aria-controls="list-skin"
+            >Skins</a
+          >
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="tab-content" id="nav-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="list-tp"
+            role="tabpanel"
+            aria-labelledby="list-tp-list"
+          >
+            <h2>Teleportation Commands</h2>
+            <span
+              >/tpr PLAYER -- Sends tp request <br />
+              /tpa -- Accept incoming tp request <br />
+              /tpc -- Cancel incoming tp request <br />
+              /outpost -- Teleport to Outpost <br />
+              /bandit -- Teleport to Bandit</span
+            >
+          </div>
+          <div
+            class="tab-pane fade"
+            id="list-home"
+            role="tabpanel"
+            aria-labelledby="list-home-list"
+          >
+            <h2>Home Commands</h2>
+            <span
+              >/home add NAME -- Creates home with given name <br />
+              /home remove NAME -- Removes home with given name <br />
+              /home list -- Lists all homes <br />
+              /home NAME -- Teleport to home</span
+            >
+          </div>
+          <div
+            class="tab-pane fade"
+            id="list-vehicle"
+            role="tabpanel"
+            aria-labelledby="list-vehicles-list"
+          >
+            <h2>Vehicle Commands</h2>
+            <span
+              >/vclaim -- Claims vehicle <br />
+              /vunclaim -- Unclaims vehicle <br />
+              /vlock -- Add codelock to vehicle</span
+            >
+          </div>
+          <div
+            class="tab-pane fade"
+            id="list-bgrade"
+            role="tabpanel"
+            aria-labelledby="list-bgrade-list"
+          >
+            <h2>Bgrade & Remove Commands</h2>
+            <span
+              >/bgrade t SECONDS -- Change the players disable timer <br />
+              /bgrade 0 -- Disable BGrade <br />
+              /bgrade 1 -- Enable automatic Wood upgrades <br />
+              /bgrade 2 -- Enable automatic Stone upgrades <br />
+              /bgrade 3 -- Enable automatic Metal upgrades <br />
+              /bgrade 4 -- Enable automatic Armoured upgrades <br />
+              /remove -- Activates remove tool</span
+            >
+          </div>
+          <div
+            class="tab-pane fade"
+            id="list-skin"
+            role="tabpanel"
+            aria-labelledby="list-skin-list"
+          >
+            <h2>Skins Commands</h2>
+            <span
+              >/skin -- Open skin box <br>
+              /reskin -- Give current item random skin</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
