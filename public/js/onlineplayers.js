@@ -3,7 +3,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
 
-fetch('http://localhost:3000/onlineplayers')
+fetch('http://kveddo.com/onlineplayers')
     .then(res => {
         if (res.ok) { 
             console.log("Fetch request successfull")

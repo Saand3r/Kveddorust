@@ -88,7 +88,7 @@ app.get('/logout', function(req, res, next) {
 });
 
 
-app.use('kveddo.com/onlineplayers', (req, res) => {
+app.use('/onlineplayers', (req, res) => {
     const Gamedig = require('gamedig')
     Gamedig.query({
         type: 'rust',
