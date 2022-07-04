@@ -46,9 +46,9 @@ Skins
 <div class="card second-card">
   <div class="container">
     <div class="row">
-      <h2>Plugin's list overview</h2>
+      <h2>All commands</h2>
     </div>
-    <div class="row mt-2 mb-2">
+    <div class="row mt-2 mb-4">
       <div class="col-4">
         <div class="list-group" id="list-tab" role="tablist">
           <a
@@ -95,6 +95,24 @@ Skins
             role="tab"
             aria-controls="list-skin"
             >Skins</a
+          >
+          <a
+            class="list-group-item list-group-item-action"
+            id="list-levels-list"
+            data-bs-toggle="list"
+            href="#list-levels"
+            role="tab"
+            aria-controls="list-levels"
+            >Zlevels</a
+          >
+          <a
+            class="list-group-item list-group-item-action"
+            id="list-other-list"
+            data-bs-toggle="list"
+            href="#list-other"
+            role="tab"
+            aria-controls="list-other"
+            >Other</a
           >
         </div>
       </div>
@@ -150,8 +168,7 @@ Skins
           >
             <h2>Bgrade & Remove Commands</h2>
             <span
-              >/bgrade t SECONDS -- Change the players disable timer <br />
-              /bgrade 0 -- Disable BGrade <br />
+              >/bgrade 0 -- Disable BGrade <br />
               /bgrade 1 -- Enable automatic Wood upgrades <br />
               /bgrade 2 -- Enable automatic Stone upgrades <br />
               /bgrade 3 -- Enable automatic Metal upgrades <br />
@@ -169,6 +186,31 @@ Skins
             <span
               >/skin -- Open skin box <br>
               /reskin -- Give current item random skin</span
+            >
+          </div>
+          <div
+            class="tab-pane fade"
+            id="list-levels"
+            role="tabpanel"
+            aria-labelledby="list-levels-list"
+          >
+            <h2>Zlevels Commands</h2>
+            <span
+              >/stats -- Display stats <br>
+              /statsui -- Toggle stats ui <br>
+              /statsinfo -- Display stats info</span
+            >
+          </div>
+          <div
+            class="tab-pane fade"
+            id="list-other"
+            role="tabpanel"
+            aria-labelledby="list-other-list"
+          >
+            <h2>Other Commands</h2>
+            <span
+              >/kit -- Open kit menu <br>
+              /voteday -- Participate to vote day</span
             >
           </div>
         </div>
