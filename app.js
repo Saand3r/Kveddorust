@@ -95,7 +95,7 @@ app.use('/onlineplayers', (req, res) => {
         host: 'oslo14.spillvert.no',
         port: 28215,
         requestRules: true,
-        maxAttempts: 100000,
+        maxAttempts: 1000,
         socketTimeout: 1000
     }).then((state) => {
         const numplayers = state.raw.numplayers
