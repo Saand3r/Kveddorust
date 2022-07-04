@@ -10,7 +10,7 @@ var express = require('express')
 
 const ejsLint = require('ejs-lint');
 const expressLayouts = require('express-ejs-layouts');
-const rcon = require('./modules/rcon.js');
+//const rcon = require('./modules/rcon.js');
 //const { default: RCON } = require('rcon-srcds');
 //const Rcon = require('rcon');
 require('dotenv').config()
@@ -53,7 +53,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 
-var PORT = 5000;
+var PORT = 3000;
 
 app.use(session({
     secret: process.env.SESSION_SECRET,
@@ -136,7 +136,7 @@ function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) { return next(); }
     res.redirect('/');
 }
-if (typeof(PhusionPassenger) !== 'undefined') {
+/* if (typeof(PhusionPassenger) !== 'undefined') {
     PhusionPassenger.configure({ autoInstall: false });
 }
 
@@ -151,4 +151,4 @@ if (typeof(PhusionPassenger) !== 'undefined') {
     app.listen('passenger');
 } else {
     app.listen(3000);
-}
+} */
