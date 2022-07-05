@@ -201,6 +201,7 @@ app.use('/contact', (req, res) => {
 })
 
 app.use('/discord', (req, res) => {
+    res.status(200)
     res.redirect("https://discord.gg/sNTQgyRqRy")
 })
 
