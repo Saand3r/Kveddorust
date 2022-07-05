@@ -63,7 +63,7 @@ app.set('view engine', 'ejs');
 
 var PORT = 3000;
 
-app.post('/pay', (req, res) => {
+/* app.post('/pay', (req, res) => {
     const create_payment_json = {
         "intent": "sale",
         "payer": {
@@ -129,7 +129,7 @@ app.get('/success', (req, res) => {
 })
 
 
-app.get('/cancel', (req, res) => res.send('cancelled'))
+app.get('/cancel', (req, res) => res.send('cancelled')) */
 
 
 app.use(session({
