@@ -19,11 +19,11 @@ require('dotenv').config()
 //require('./src/rcon.js');
 
 
-paypal.configure({
+/* paypal.configure({
     'mode': 'sandbox', //sandbox or live
     'client_id': 'AbjikbSMGJydMkkTvIU7MNxo_N6o8Nt3ACUCC98rhVlW8UTvLobWr5099rjM804Btao7ATYNz_MYsYnt',
     'client_secret': 'EAIY1eescgTOq0aP5nQhBh2KjSVq3Fj9wSqrLZy-iSv35Lhurn9LanCPDINEA1g2ftrWBDPnQuvpImR_'
-});
+}); */
 
 
 var SteamStrategy = passportSteam.Strategy;
