@@ -200,9 +200,7 @@ app.use('/contact', (req, res) => {
     res.render('contact', { title: 'Kveddo Contact', user: req.user })
 })
 
-app.post('/discord', (req, res) => {
-    res.status(301).redirect("https://discord.gg/sNTQgyRqRy")
-})
+
 
 // See views/auth.js for authentication routes
 app.use('/auth', authRoutes);
