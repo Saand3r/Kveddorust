@@ -200,7 +200,7 @@ app.use('/contact', (req, res) => {
     res.render('contact', { title: 'Kveddo Contact', user: req.user })
 })
 
-app.use('/discord', (req, res) => {
+app.get('/discord', (req, res) => {
     res.status(200)
     res.redirect("https://discord.gg/sNTQgyRqRy")
 })
