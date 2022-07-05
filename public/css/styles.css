@@ -6,6 +6,9 @@ body {
     background-position: center;
     font-family: sans-serif;
 }
+h2 {
+    color: #055160ef;
+}
 .wrapper {
     margin: 0 auto;
 }
