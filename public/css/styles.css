@@ -81,6 +81,11 @@ body {
 }
 .custom-nav {
     background-color: #055160ef;
+    border-bottom: 1px solid black;
+}
+.nav-item:hover {
+    text-decoration: underline;
+    transform: scale(1.2);
 }
 .brand-image {
     height: 40px;
