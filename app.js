@@ -200,6 +200,10 @@ app.use('/contact', (req, res) => {
     res.render('contact', { title: 'Kveddo Contact', user: req.user })
 })
 
+app.use('/discord', (req, res) => {
+    res.redirect("https://discord.gg/sNTQgyRqRy")
+})
+
 // See views/auth.js for authentication routes
 app.use('/auth', authRoutes);
 
