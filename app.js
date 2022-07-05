@@ -201,8 +201,7 @@ app.use('/contact', (req, res) => {
 })
 
 app.get('/discord', (req, res) => {
-    res.status(200)
-    res.redirect("https://discord.gg/sNTQgyRqRy")
+    res.status(301).redirect("https://discord.gg/sNTQgyRqRy")
 })
 
 // See views/auth.js for authentication routes
