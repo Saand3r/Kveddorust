@@ -48,9 +48,9 @@
                                 <% if (!user) { %>
                                 <p>Login to buy</p>
                                 <% } else { %>
-                                <div class="btn">
-                                    Buy now
-                                </div>
+                                <form action="/pay" method="post">
+                                    <input type="submit" value="Buy">
+                                </form>
                                 <% } %>
                             </div>
                         </div>

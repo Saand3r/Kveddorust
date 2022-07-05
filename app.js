@@ -5,7 +5,8 @@ var express = require('express')
   , session = require('express-session')
   , passportSteam = require('passport-steam')
   , util = require('util')
-  , authRoutes = require('./routes/auth');
+  , authRoutes = require('./routes/auth')
+  , paypal = require('paypal-rest-sdk');
 
 
 const ejsLint = require('ejs-lint');
@@ -16,6 +17,13 @@ const expressLayouts = require('express-ejs-layouts');
 require('dotenv').config()
 //require('./modules/rcon.js')
 //require('./src/rcon.js');
+
+
+paypal.configure({
+    'mode': 'sandbox', //sandbox or live
+    'client_id': 'AbjikbSMGJydMkkTvIU7MNxo_N6o8Nt3ACUCC98rhVlW8UTvLobWr5099rjM804Btao7ATYNz_MYsYnt',
+    'client_secret': 'EAIY1eescgTOq0aP5nQhBh2KjSVq3Fj9wSqrLZy-iSv35Lhurn9LanCPDINEA1g2ftrWBDPnQuvpImR_'
+});
 
 
 var SteamStrategy = passportSteam.Strategy;
@@ -33,8 +41,8 @@ passport.deserializeUser(function(obj, done) {
 
 // Initiate Strategy
 passport.use(new SteamStrategy({
-    returnURL: 'http://kveddo.com/auth/steam/return',
-    realm: 'http://kveddo.com/',
+    returnURL: 'http://localhost:3000/auth/steam/return',
+    realm: 'http://localhost:3000/',
     apiKey: process.env.STEAM_API
     }, function (identifier, profile, done) {
      process.nextTick(function () {
@@ -54,6 +62,75 @@ app.set('view engine', 'ejs');
 
 
 var PORT = 3000;
+
+app.post('/pay', (req, res) => {
+    const create_payment_json = {
+        "intent": "sale",
+        "payer": {
+            "payment_method": "paypal"
+        },
+        "redirect_urls": {
+            "return_url": "http://localhost:3000/success",
+            "cancel_url": "http://localhost:3000/cancel"
+        },
+        "transactions": [{
+            "item_list": {
+                "items": [{
+                    "name": "Vip",
+                    "sku": "001",
+                    "price": "5.00",
+                    "currency": "USD",
+                    "quantity": 1
+                }]
+            },
+            "amount": {
+                "currency": "USD",
+                "total": "5.00"
+            },
+            "description": "This is the payment description."
+        }]
+    }
+    paypal.payment.create(create_payment_json, function (error, payment) {
+        if (error) {
+            throw error
+        } else {
+            for(let i = 0;i < payment.links.lenght;i++){
+                if(payment.links[i].rel === 'approval_url'){
+                    res.redirect(payment.links[i].href)
+                }
+            }
+        }
+    })
+})
+
+app.get('/success', (req, res) => {
+    const payerId = req.query.PayerID
+    const paymentId = req.query.paymentId
+
+    const execute_payment_json = {
+        "payer_id": payerId,
+        "transactions": [{
+            "amount": {
+                "currency": "USD",
+                "total": "5.00"
+            }
+        }]
+    }
+
+    paypal.payment.execute(paymentId, execute_payment_json, function (error, payment) {
+        if (error) {
+            console.log(error.response)
+            throw error
+        } else {
+            console.log(JSON.stringify(payment))
+            res.send('success')
+        }
+    })
+})
+
+
+app.get('/cancel', (req, res) => res.send('cancelled'))
+
 
 app.use(session({
     secret: process.env.SESSION_SECRET,
@@ -102,6 +179,7 @@ app.use('/onlineplayers', (req, res) => {
         const wipeTime = state.raw.tags[8].substring(4)
         const mapType = state.map
         res.json([numplayers, wipeTime, mapType])
+        console.log(wipeTime)
         return
     }).catch((error) => {
         console.log(error)
