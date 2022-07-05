@@ -200,7 +200,7 @@ app.use('/contact', (req, res) => {
     res.render('contact', { title: 'Kveddo Contact', user: req.user })
 })
 
-app.get('/discord', (req, res) => {
+app.post('/discord', (req, res) => {
     res.status(301).redirect("https://discord.gg/sNTQgyRqRy")
 })
 
@@ -217,19 +217,3 @@ function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) { return next(); }
     res.redirect('/');
 }
-/* if (typeof(PhusionPassenger) !== 'undefined') {
-    PhusionPassenger.configure({ autoInstall: false });
-}
-
-app.get('/', function(req, res) {
-    var body = 'Hello World';
-    res.setHeader('Content-Type', 'text/plain');
-    res.setHeader('Content-Length', body.length);
-    res.end(body);
-});
-
-if (typeof(PhusionPassenger) !== 'undefined') {
-    app.listen('passenger');
-} else {
-    app.listen(3000);
-} */
