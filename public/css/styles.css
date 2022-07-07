@@ -108,6 +108,16 @@ h2 {
     color: white;
     border-radius: none;
 }
+.vip-green:hover {
+    transform: scale(1.1);
+    background-color: #42f545;
+    text-transform: uppercase;
+}
+.vip-red:hover {
+    transform: scale(1.1);
+    background-color: #c73d02;
+    text-transform: uppercase;
+}
 
 /* X-Small devices (portrait phones, less than 576px)
 No media query for `xs` since this is the default in Bootstrap
