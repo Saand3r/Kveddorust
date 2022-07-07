@@ -1,14 +1,22 @@
 <div class="card second-card">
-    <div class="card-header mt-2">
-        <h5 class="card-title first-card-title">Store</h5>
-        <p>Running an rust server is not free, therefor there are some available VIP groups to purchase</p>
-        <p>More will be added to groups along the way</p>
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Store page is not complete, no orders shall be fulfilled</strong>
-            <p>Authenticated players get all VIP1 features for free</p>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-        <!-- <div class="accordion" id="defaultvalues">
+  <div class="card-header mt-2">
+    <h5 class="card-title first-card-title">Store</h5>
+    <p>
+      Running an rust server is not free, therefor there are some available VIP
+      groups to purchase
+    </p>
+    <p>More will be added to groups along the way</p>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Store page is not complete, no orders shall be fulfilled</strong>
+      <p>Authenticated players get all VIP1 features for free</p>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    <!-- <div class="accordion" id="defaultvalues">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingOne">
                     <button class="accordion-button collapsed dfv" type="button" data-bs-toggle="collapse"
@@ -27,115 +35,188 @@
                 </div>
             </div>
         </div> -->
-    </div>
-        <div class="card-body">
-            <div class="container">
-                <div class="row">
-                    <p>All VIP ranks come with donator role in discord and always prioritized spot on the server</p>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <div class="card third-card">
-                            <div class="card-header" style="background-color: #e3a909;"><h2>VIP1</h2>
-                                <h2>5$</h2>
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item vip-green rounded-pill">Vip1 daily kit</li>
-                                    <li class="list-group-item vip-green rounded-pill mt-1">In-game chat title</li>
-                                    <li class="list-group-item vip-green rounded-pill mt-1">+1 row in backpack</li>
-                                    <li class="list-group-item vip-green rounded-pill mt-1">/skin in-game</li>
-                                    <li class="list-group-item vip-green rounded-pill mt-1">+1 home</li>
-                                    <li class="list-group-item vip-green rounded-pill mt-1">+10 teleports</li>
-                                    <li class="list-group-item vip-red rounded-pill mt-1">60sec cooldown</li>
-                                    <li class="list-group-item vip-red rounded-pill mt-1">More vehicle storage</li>
-                                    <li class="list-group-item vip-red rounded-pill mt-1">Personal recycler</li>
-                                    <li class="list-group-item vip-red rounded-pill mt-1">No vehicle decay</li>
-                                </ul>
-                                <% if (!user) { %>
-                                <p>Login to buy</p>
-                                <% } else { %>
-                                <form action="/pay" method="post">
-                                    <input type="submit" value="Buy">
-                                </form>
-                                <% } %>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <div class="card third-card">
-                            <div class="card-header" style="background-color: #c6e309;"><h2>VIP2</h2>
-                            <h2>10$</h2>
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item vip-green rounded-pill">Vip2 daily kit</li>
-                                    <li class="list-group-item vip-green rounded-pill mt-1">In-game chat title</li>
-                                    <li class="list-group-item vip-green rounded-pill mt-1">+2 rows in backpack</li>
-                                    <li class="list-group-item vip-green rounded-pill mt-1">/skin in-game</li>
-                                    <li class="list-group-item vip-green rounded-pill mt-1">+2 homes</li>
-                                    <li class="list-group-item vip-green rounded-pill mt-1">+20 teleports</li>
-                                    <li class="list-group-item vip-green rounded-pill mt-1">60sec cooldown</li>
-                                    <li class="list-group-item vip-green rounded-pill mt-1">More vehicle storage</li>
-                                    <li class="list-group-item vip-red rounded-pill mt-1">Personal recycler</li>
-                                    <li class="list-group-item vip-red rounded-pill mt-1">No vehicle decay</li>
-                                </ul>
-                                <% if (!user) { %>
-                                <p>Login to buy</p>
-                                <% } else { %>
-                                <div class="btn">
-                                    Buy now
-                                </div>
-                                <% } %>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <div class="card third-card">
-                            <div class="card-header" style="background-color: #09e35d;"><h2>VIP3</h2>
-                            <h2>15$</h2>
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-group list-group">
-                                    <li class="list-group-item vip-green rounded-pill">Vip3 daily kit</li>
-                                    <li class="list-group-item vip-green rounded-pill mt-1">In-game chat title</li>
-                                    <li class="list-group-item vip-green rounded-pill mt-1">+3 rows in backpack</li>
-                                    <li class="list-group-item vip-green rounded-pill mt-1">/skin in-game</li>
-                                    <li class="list-group-item vip-green rounded-pill mt-1">+3 homes</li>
-                                    <li class="list-group-item vip-green rounded-pill mt-1">+30 teleports</li>
-                                    <li class="list-group-item vip-green rounded-pill mt-1">60sec cooldown</li>
-                                    <li class="list-group-item vip-green rounded-pill mt-1">Max vehicle storage</li>
-                                    <li class="list-group-item vip-green rounded-pill mt-1">Personal recycler</li>
-                                    <li class="list-group-item vip-green rounded-pill mt-1">No vehicle decay</li>
-                                </ul>
-                                <% if (!user) { %>
-                                <p>Login to buy</p>
-                                <% } else { %>
-                                <div class="btn">
-                                    Buy now
-                                </div>
-                                <% } %>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </div>
-        <div class="accordion mt-4" id="defaultvalues">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingOne">
-                    <button class="accordion-button collapsed dfv" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        Default Server Values
-                    </button>
-                </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <p>Max homes: 2</p>
-                        <p>Backpack rows: 2</p>
-                        <p>Teleports per day: 10</p>
-                        <p>Teleport cooldown: 600sec</p>
-                    </div>
-                </div>
+  </div>
+  <div class="card-body">
+    <div class="container">
+      <div class="row">
+        <p>
+          All VIP ranks come with donator role in discord and always prioritized
+          spot on the server
+        </p>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card third-card">
+            <div class="card-header" style="background-color: #e3a909">
+              <h2>VIP1</h2>
+              <h2>5$</h2>
             </div>
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item vip-green rounded-pill">
+                  Vip1 daily kit
+                </li>
+                <li class="list-group-item vip-green rounded-pill mt-1">
+                  In-game chat title
+                </li>
+                <li class="list-group-item vip-green rounded-pill mt-1">
+                  +1 row in backpack
+                </li>
+                <li class="list-group-item vip-green rounded-pill mt-1">
+                  /skin in-game
+                </li>
+                <li class="list-group-item vip-green rounded-pill mt-1">
+                  +1 home
+                </li>
+                <li class="list-group-item vip-green rounded-pill mt-1">
+                  +10 teleports
+                </li>
+                <li class="list-group-item vip-red rounded-pill mt-1">
+                  60sec cooldown
+                </li>
+                <li class="list-group-item vip-red rounded-pill mt-1">
+                  More vehicle storage
+                </li>
+                <li class="list-group-item vip-red rounded-pill mt-1">
+                  Personal recycler
+                </li>
+                <li class="list-group-item vip-red rounded-pill mt-1">
+                  No vehicle decay
+                </li>
+              </ul>
+              <% if (!user) { %>
+              <p>Login to buy</p>
+              <% } else { %>
+              <form action="/pay" method="post">
+                <input type="submit" value="Buy" />
+              </form>
+              <% } %>
+            </div>
+          </div>
         </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card third-card">
+            <div class="card-header" style="background-color: #c6e309">
+              <h2>VIP2</h2>
+              <h2>10$</h2>
+            </div>
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item vip-green rounded-pill">
+                  Vip2 daily kit
+                </li>
+                <li class="list-group-item vip-green rounded-pill mt-1">
+                  In-game chat title
+                </li>
+                <li class="list-group-item vip-green rounded-pill mt-1">
+                  +2 rows in backpack
+                </li>
+                <li class="list-group-item vip-green rounded-pill mt-1">
+                  /skin in-game
+                </li>
+                <li class="list-group-item vip-green rounded-pill mt-1">
+                  +2 homes
+                </li>
+                <li class="list-group-item vip-green rounded-pill mt-1">
+                  +20 teleports
+                </li>
+                <li class="list-group-item vip-green rounded-pill mt-1">
+                  60sec cooldown
+                </li>
+                <li class="list-group-item vip-green rounded-pill mt-1">
+                  More vehicle storage
+                </li>
+                <li class="list-group-item vip-red rounded-pill mt-1">
+                  Personal recycler
+                </li>
+                <li class="list-group-item vip-red rounded-pill mt-1">
+                  No vehicle decay
+                </li>
+              </ul>
+              <% if (!user) { %>
+              <p>Login to buy</p>
+              <% } else { %>
+              <div class="btn">Buy now</div>
+              <% } %>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card third-card">
+            <div class="card-header" style="background-color: #09e35d">
+              <h2>VIP3</h2>
+              <h2>15$</h2>
+            </div>
+            <div class="card-body">
+              <ul class="list-group list-group">
+                <li class="list-group-item vip-green rounded-pill">
+                  Vip3 daily kit
+                </li>
+                <li class="list-group-item vip-green rounded-pill mt-1">
+                  In-game chat title
+                </li>
+                <li class="list-group-item vip-green rounded-pill mt-1">
+                  +3 rows in backpack
+                </li>
+                <li class="list-group-item vip-green rounded-pill mt-1">
+                  /skin in-game
+                </li>
+                <li class="list-group-item vip-green rounded-pill mt-1">
+                  +3 homes
+                </li>
+                <li class="list-group-item vip-green rounded-pill mt-1">
+                  +30 teleports
+                </li>
+                <li class="list-group-item vip-green rounded-pill mt-1">
+                  60sec cooldown
+                </li>
+                <li class="list-group-item vip-green rounded-pill mt-1">
+                  Max vehicle storage
+                </li>
+                <li class="list-group-item vip-green rounded-pill mt-1">
+                  Personal recycler
+                </li>
+                <li class="list-group-item vip-green rounded-pill mt-1">
+                  No vehicle decay
+                </li>
+              </ul>
+              <% if (!user) { %>
+              <p>Login to buy</p>
+              <% } else { %>
+              <div class="btn">Buy now</div>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="../public/js/store.js"></script>
+    <div class="accordion mt-4" id="defaultvalues">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button
+            class="accordion-button collapsed dfv"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseOne"
+            aria-expanded="false"
+            aria-controls="flush-collapseOne"
+          >
+            Default Server Values
+          </button>
+        </h2>
+        <div
+          id="flush-collapseOne"
+          class="accordion-collapse collapse"
+          aria-labelledby="flush-headingOne"
+          data-bs-parent="#accordionFlushExample"
+        >
+          <div class="accordion-body">
+            <p>Max homes: 2</p>
+            <p>Backpack rows: 2</p>
+            <p>Teleports per day: 10</p>
+            <p>Teleport cooldown: 600sec</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../public/js/store.js"></script>
+</div>
