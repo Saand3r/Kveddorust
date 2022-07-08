@@ -60,7 +60,7 @@ Skins
             aria-controls="list-tp"
             >Teleportation</a
           >
-          <a
+          <!-- <a
             class="list-group-item list-group-item-action list-group-item-info"
             id="list-home-list"
             data-bs-toggle="list"
@@ -68,7 +68,7 @@ Skins
             role="tab"
             aria-controls="list-home"
             >Home</a
-          >
+          > -->
           <a
             class="list-group-item list-group-item-action list-group-item-info"
             id="list-vehicles-list"
@@ -139,11 +139,15 @@ Skins
               /tpa -- Accept incoming tp request <br />
               /tpc -- Cancel tp request <br />
               /outpost -- Teleport to Outpost <br />
-              /bandit -- Teleport to Bandit <br>
-              /tpinfo -- Shows limits and cooldowns</span
+              /bandit -- Teleport to Bandit <br />
+              /tpinfo -- Shows limits and cooldowns <br />
+              /home add NAME -- Creates home with given name <br />
+              /home remove NAME -- Removes home with given name <br />
+              /home list -- Lists all homes <br />
+              /home NAME -- Teleport to home</span
             >
           </div>
-          <div
+          <!-- <div
             class="tab-pane fade"
             id="list-home"
             role="tabpanel"
@@ -156,7 +160,7 @@ Skins
               /home list -- Lists all homes <br />
               /home NAME -- Teleport to home</span
             >
-          </div>
+          </div> -->
           <div
             class="tab-pane fade"
             id="list-vehicle"
@@ -194,7 +198,7 @@ Skins
           >
             <h2>Skins Commands</h2>
             <span
-              >/skin -- Open skin box <br>
+              >/skin -- Open skin box <br />
               /reskin -- Give current item random skin</span
             >
           </div>
@@ -206,8 +210,8 @@ Skins
           >
             <h2>Levels Commands</h2>
             <span
-              >/stats -- Display stats <br>
-              /statsui -- Toggle stats ui <br>
+              >/stats -- Display stats <br />
+              /statsui -- Toggle stats ui <br />
               /statsinfo -- Display stats info</span
             >
           </div>
@@ -219,9 +223,16 @@ Skins
           >
             <h2>Other Commands</h2>
             <span
-              >/kit -- Open kit menu <br>
-              /voteday -- Participate to vote day <br>
-              /auth -- Generates a code which players can send to Kveddo Bot in discord <a href="https://discord.gg/sNTQgyRqRy"><img src="../public/img/discord-join.png" alt="discord" style="height: 50px;"></a>
+              >/kit -- Open kit menu <br />
+              /voteday -- Participate to vote day <br />
+              /auth -- Generates a code which players can send to Kveddo Bot in
+              discord
+              <a href="https://discord.gg/sNTQgyRqRy"
+                ><img
+                  src="../public/img/discord-join.png"
+                  alt="discord"
+                  style="height: 50px"
+              /></a>
               <i>Authenticated players get all VIP1 features</i></span
             >
           </div>
