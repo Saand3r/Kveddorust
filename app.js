@@ -15,7 +15,7 @@ const expressLayouts = require('express-ejs-layouts');
 //const { default: RCON } = require('rcon-srcds');
 //const Rcon = require('rcon');
 require('dotenv').config()
-//require('./modules/rcon.js')
+require('./modules/rcon.js')
 //require('./src/rcon.js');
 
 

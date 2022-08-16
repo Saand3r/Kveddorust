@@ -1,5 +1,5 @@
 const { Client } = require('rustrcon')
-const dotenv = require('dotenv').config()
+require('dotenv').config()
 const rcon = new Client({
     ip: '91.189.176.196',
     port: 28216,
