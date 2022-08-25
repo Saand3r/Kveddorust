@@ -178,7 +178,7 @@ app.use('/onlineplayers', (req, res) => {
         const numplayers = state.raw.numplayers
         const wipeTime = state.raw.tags[8].substring(4)
         const mapType = state.map
-        res.json([numplayers, wipeTime, mapType])
+        res.send([numplayers, wipeTime, mapType])
         return
     }).catch((error) => {
         console.log(error)
