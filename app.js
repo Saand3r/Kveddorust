@@ -6,7 +6,8 @@ var express = require('express')
   , passportSteam = require('passport-steam')
   , util = require('util')
   , authRoutes = require('./routes/auth')
-  , paypal = require('paypal-rest-sdk');
+  , paypal = require('paypal-rest-sdk')
+  , cors = require('cors');
 
 
 const ejsLint = require('ejs-lint');
@@ -62,6 +63,12 @@ app.set('view engine', 'ejs');
 
 
 var PORT = 3000;
+
+
+app.use(express.urlencoded({extended:true}))
+app.use(cors())
+
+
 
 /* app.post('/pay', (req, res) => {
     const create_payment_json = {
