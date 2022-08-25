@@ -180,12 +180,13 @@ app.use('/onlineplayers', (req, res) => {
         host: 'oslo14.spillvert.no',
         port: 28215,
         requestRules: true,
-        maxAttempts: 10,
-        socketTimeout: 10
+        maxAttempts: 100,
+        socketTimeout: 100
     }).then((state) => {
         const numplayers = state.raw.numplayers
         const wipeTime = state.raw.tags[8].substring(4)
         const mapType = state.map
+        res.status(200)
         res.send([numplayers, wipeTime, mapType])
         return
     }).catch((error) => {
