@@ -65,8 +65,7 @@ app.set('view engine', 'ejs');
 var PORT = 3000;
 
 
-app.use(express.urlencoded({extended:true}))
-app.use(cors())
+
 
 
 
@@ -174,6 +173,8 @@ app.get('/logout', function(req, res, next) {
 
 app.use('/onlineplayers', (req, res) => {
     const Gamedig = require('gamedig')
+    app.use(express.urlencoded({extended:true}))
+    app.use(cors())
     Gamedig.query({
         type: 'rust',
         host: 'oslo14.spillvert.no',
