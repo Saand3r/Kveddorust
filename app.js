@@ -172,8 +172,8 @@ app.use('/onlineplayers', (req, res) => {
         host: 'oslo14.spillvert.no',
         port: 28215,
         requestRules: true,
-        maxAttempts: 1000,
-        socketTimeout: 1000
+        maxAttempts: 10,
+        socketTimeout: 10
     }).then((state) => {
         const numplayers = state.raw.numplayers
         const wipeTime = state.raw.tags[8].substring(4)
