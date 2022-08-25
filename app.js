@@ -62,7 +62,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 
-var PORT = 80;
+var PORT = 3000;
 
 
 
