@@ -170,7 +170,7 @@ app.use('/onlineplayers', (req, res) => {
     Gamedig.query({
         type: 'rust',
         host: 'oslo14.spillvert.no',
-        port: 28215,
+        port: 28216,
         requestRules: true,
         maxAttempts: 1000,
         socketTimeout: 1000
