@@ -177,8 +177,8 @@ app.use('/onlineplayers', (req, res) => {
     app.use(cors())
     Gamedig.query({
         type: 'rust',
-        host: 'oslo14.spillvert.no',
-        port: 28215,
+        host: process.env.GAME_HOST,
+        port: process.env.GAME_PORT,
         requestRules: true,
         maxAttempts: 100,
         socketTimeout: 100
