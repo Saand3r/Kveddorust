@@ -173,8 +173,6 @@ app.get('/logout', function(req, res, next) {
 
 app.use('/onlineplayers', (req, res) => {
     const Gamedig = require('gamedig')
-    app.use(express.urlencoded({extended:true}))
-    app.use(cors())
     Gamedig.query({
         type: 'rust',
         host: process.env.GAME_HOST,
@@ -216,7 +214,7 @@ app.use('/auth', authRoutes);
 
 app.listen(process.env.PORT || PORT, async function(err){
     if (err) console.log(err);
-    console.log("Server listening on PORT", PORT);
+    console.log("Server listening on PORT", process.env.PORT);
 });
 
 
