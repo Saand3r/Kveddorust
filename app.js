@@ -178,8 +178,8 @@ app.use('/onlineplayers', (req, res) => {
         host: process.env.GAME_HOST,
         port: process.env.GAME_PORT,
         requestRules: true,
-        maxAttempts: 10000,
-        socketTimeout: 1
+        maxAttempts: 1000,
+        socketTimeout: 1000
     }).then((state) => {
         const numplayers = state.raw.numplayers
         const wipeTime = state.raw.tags[8].substring(4)
