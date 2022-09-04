@@ -193,8 +193,9 @@ app.use('/onlineplayers', (req, res) => {
 })
 
 app.use('/store', (req, res) => {
-    res.status(200)
-    res.render('store', { title: 'Kveddo Store', user: req.user })
+    res.redirect('https://kveddo.tip4serv.com/')
+    /* res.status(200)
+    res.render('store', { title: 'Kveddo Store', user: req.user }) */
 })
 
 app.use('/commands', (req, res) => {
